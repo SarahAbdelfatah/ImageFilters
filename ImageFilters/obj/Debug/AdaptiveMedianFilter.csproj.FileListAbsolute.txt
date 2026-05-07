@@ -1,0 +1,2 @@
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\AdaptiveMedianFilter\obj\Debug\AdaptiveMedianFilter.exe
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\AdaptiveMedianFilter\obj\Debug\AdaptiveMedianFilter.pdb
