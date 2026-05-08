@@ -181,6 +181,79 @@ namespace ImageFilters
             return resultImage;
         }
 
+        // ===== Midpoint Filter (Non-Efficient) =====
+        // Collects neighbors into an array, then finds max & min with separate loops
+        public static byte[,] ApplyMidpointNonEfficient(byte[,] ImageMatrix)
+        {
+            int height = GetHeight(ImageMatrix);
+            int width = GetWidth(ImageMatrix);
+            byte[,] newimage = new byte[height, width];
+
+            for (int i = 1; i < height - 1; i++)
+            {
+                for (int j = 1; j < width - 1; j++)
+                {
+                    byte[] neighbor = new byte[9];
+                    int size = 0;
+                    for (int k = -1; k <= 1; k++)
+                    {
+                        for (int l = -1; l <= 1; l++)
+                        {
+                            neighbor[size++] = ImageMatrix[i + k, j + l];
+                        }
+                    }
+
+                    int max = neighbor[0];
+                    for (int x = 0; x < 9; x++)
+                    {
+                        if (max < neighbor[x])
+                            max = neighbor[x];
+                    }
+
+                    int min = neighbor[0];
+                    for (int x = 0; x < 9; x++)
+                    {
+                        if (min > neighbor[x])
+                            min = neighbor[x];
+                    }
+
+                    newimage[i, j] = (byte)((max + min) / 2);
+                }
+            }
+            return newimage;
+        }
+
+        // ===== Midpoint Filter (Efficient) =====
+        // Tracks max & min on the fly in a single pass — no extra array needed
+        public static byte[,] ApplyMidpointEfficient(byte[,] ImageMatrix)
+        {
+            int height = GetHeight(ImageMatrix);
+            int width = GetWidth(ImageMatrix);
+            byte[,] newimage = new byte[height, width];
+
+            for (int i = 1; i < height - 1; i++)
+            {
+                for (int j = 1; j < width - 1; j++)
+                {
+                    int max = 0;
+                    int min = 255;
+                    for (int k = -1; k <= 1; k++)
+                    {
+                        for (int l = -1; l <= 1; l++)
+                        {
+                            int current = ImageMatrix[i + k, j + l];
+                            if (current > max)
+                                max = current;
+                            if (current < min)
+                                min = current;
+                        }
+                    }
+                    newimage[i, j] = (byte)((max + min) / 2);
+                }
+            }
+            return newimage;
+        }
+
 
     }
 }

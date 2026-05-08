@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\projects\\privateRepo\\[TEMPLATE] ImageFilters\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|c:\\users\\user\\desktop\\projects\\privaterepo\\[template] imagefilters\\imagefilters\\imageoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|solutionrelative:imagefilters\\imageoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|c:\\users\\user\\desktop\\projects\\privaterepo\\[template] imagefilters\\imagefilters\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|solutionrelative:imagefilters\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|C:\\Users\\User\\Desktop\\projects\\privateRepo\\[TEMPLATE] ImageFilters\\imagefilters\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|solutionrelative:imagefilters\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|c:\\users\\user\\desktop\\projects\\privaterepo\\[template] imagefilters\\imagefilters\\imageoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{543720D9-2C94-4048-BDCC-9025F2FB23CB}|ImageFilters\\ImageFilters.csproj|solutionrelative:imagefilters\\imageoperations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,13 +62,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ImageOperations.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\projects\\privateRepo\\[TEMPLATE] ImageFilters\\ImageFilters\\ImageOperations.cs",
               "RelativeDocumentMoniker": "ImageFilters\\ImageOperations.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\projects\\privateRepo\\[TEMPLATE] ImageFilters\\ImageFilters\\ImageOperations.cs",
               "RelativeToolTip": "ImageFilters\\ImageOperations.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAuwK0AAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAUwOkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-03T21:01:23.045Z",
               "EditorCaption": ""
@@ -78,7 +82,21 @@
               "ToolTip": "C:\\Users\\User\\Desktop\\projects\\privateRepo\\[TEMPLATE] ImageFilters\\ImageFilters\\Form1.cs [Design]",
               "RelativeToolTip": "ImageFilters\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T21:01:10.274Z"
+              "WhenOpened": "2026-05-03T21:01:10.274Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\projects\\privateRepo\\[TEMPLATE] ImageFilters\\ImageFilters\\Form1.cs",
+              "RelativeDocumentMoniker": "ImageFilters\\Form1.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\projects\\privateRepo\\[TEMPLATE] ImageFilters\\ImageFilters\\Form1.cs",
+              "RelativeToolTip": "ImageFilters\\Form1.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAAAGwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T12:36:16.123Z",
+              "EditorCaption": ""
             }
           ]
         }
