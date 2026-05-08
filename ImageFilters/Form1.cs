@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ImageFilters
 {
@@ -16,14 +17,14 @@ namespace ImageFilters
             //(hide everything except Open)
             label1.Visible = false;
             label2.Visible = false;
+
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+            groupBox3.Visible = false;
+
             radioButton1.Visible = false;
             radioButton2.Visible = false;
 
-            button1.Visible = false;
-            button2.Visible = false;
-            button3.Visible = false;
-            button4.Visible = false;
-            button5.Visible = false;
         }
 
         byte[,] ImageMatrix;
@@ -41,7 +42,7 @@ namespace ImageFilters
                 btnOpen.Visible = false;
 
                 // Show filter options
-                label1.Visible = true;
+                groupBox1.Visible = true;
                 radioButton1.Visible = true;
                 radioButton2.Visible = true;
 
@@ -57,13 +58,9 @@ namespace ImageFilters
         {
             if (radioButton1.Checked)
             {
-                label2.Visible = true;
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
-
-                button4.Visible = false;
-                button5.Visible = false;
+                groupBox3.Visible = false;
+                groupBox2.Visible = true;
+                groupBox3.BringToFront();
             }
 
         }
@@ -72,13 +69,8 @@ namespace ImageFilters
         {
             if (radioButton2.Checked)
             {
-                label2.Visible = true;
-                button4.Visible = true;
-                button5.Visible = true;
-
-                button1.Visible = false;
-                button2.Visible = false;
-                button3.Visible = false;
+                groupBox2.Visible = false;
+                groupBox3.Visible = true;
             }
         }
 
@@ -112,10 +104,56 @@ namespace ImageFilters
             MessageBox.Show("Kth Filter Applied!\nExecution Time: " + executionTime + " ms");
         }
 
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Non-Efficient Midpoint Filter
+            if (ImageMatrix == null)
+            {
+                MessageBox.Show("Please open an image first!");
+                return;
+            }
+
+            int startTime = System.Environment.TickCount;
+
+            byte[,] filteredImage = ImageOperations.ApplyMidpointNonEfficient(ImageMatrix);
+
+            int executionTime = System.Environment.TickCount - startTime;
+
+            ImageOperations.DisplayImage(filteredImage, pictureBox2);
+
+            MessageBox.Show("Midpoint Filter (Non-Efficient) Applied!\nExecution Time: " + executionTime + " ms");
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Efficient Midpoint Filter
+            if (ImageMatrix == null)
+            {
+                MessageBox.Show("Please open an image first!");
+                return;
+            }
+
+            int startTime = System.Environment.TickCount;
+
+            byte[,] filteredImage = ImageOperations.ApplyMidpointEfficient(ImageMatrix);
+
+            int executionTime = System.Environment.TickCount - startTime;
+
+            ImageOperations.DisplayImage(filteredImage, pictureBox2);
+
+            MessageBox.Show("Midpoint Filter (Efficient) Applied!\nExecution Time: " + executionTime + " ms");
+        }
+
         private void button6_Click(object sender, EventArgs e)
         {
             // Restarts the entire application
             Application.Restart();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
