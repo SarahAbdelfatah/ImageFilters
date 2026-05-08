@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ImageFilters
 {
@@ -21,6 +20,7 @@ namespace ImageFilters
             groupBox1.Visible = false;
             groupBox2.Visible = false;
             groupBox3.Visible = false;
+            groupBox4.Visible = false; // Add window size group hide
 
             radioButton1.Visible = false;
             radioButton2.Visible = false;
@@ -28,6 +28,19 @@ namespace ImageFilters
         }
 
         byte[,] ImageMatrix;
+
+        /// <summary>
+        /// Returns the window size based on which radio button is selected in groupBox4.
+        /// radioButton3 = 3, radioButton4 = 5, radioButton5 = 7
+        /// </summary>
+        private int GetSelectedWindowSize()
+        {
+            if (radioButton3.Checked) return 3;
+            if (radioButton4.Checked) return 5;
+            if (radioButton5.Checked) return 7;
+            // Default fallback
+            return 3;
+        }
 
         private void btnOpen_Click(object sender, EventArgs e)
         {
@@ -41,8 +54,9 @@ namespace ImageFilters
                 // Hide open button
                 btnOpen.Visible = false;
 
-                // Show filter options
+                // Show window size group and filter options
                 groupBox1.Visible = true;
+                groupBox4.Visible = true; // Show window size selection
                 radioButton1.Visible = true;
                 radioButton2.Visible = true;
 
@@ -83,8 +97,8 @@ namespace ImageFilters
                 return;
             }
 
-            // 2. Window Size (Set to 3 for now since there is no input box in the UI yet)
-            int windowSize = 7;
+            // 2. Get window size from the selected radio button
+            int windowSize = GetSelectedWindowSize();
 
             // 3. Start the timer (Required for your project graph)
             int startTime = System.Environment.TickCount;
@@ -96,12 +110,10 @@ namespace ImageFilters
             int executionTime = System.Environment.TickCount - startTime;
 
             // 6. Display the result
-            // Note: Change 'pictureBox2' to 'pictureBox1' if you want it to overwrite the original image, 
-            // or keep it as 'pictureBox2' if the blank square on the right side of your UI is named pictureBox2.
             ImageOperations.DisplayImage(filteredImage, pictureBox2);
 
             // 7. Show a popup with the execution time
-            MessageBox.Show("Kth Filter Applied!\nExecution Time: " + executionTime + " ms");
+            MessageBox.Show("Kth Filter Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
         }
 
 
@@ -114,15 +126,17 @@ namespace ImageFilters
                 return;
             }
 
+            int windowSize = GetSelectedWindowSize();
+
             int startTime = System.Environment.TickCount;
 
-            byte[,] filteredImage = ImageOperations.ApplyMidpointNonEfficient(ImageMatrix);
+            byte[,] filteredImage = ImageOperations.ApplyMidpointNonEfficient(ImageMatrix, windowSize);
 
             int executionTime = System.Environment.TickCount - startTime;
 
             ImageOperations.DisplayImage(filteredImage, pictureBox2);
 
-            MessageBox.Show("Midpoint Filter (Non-Efficient) Applied!\nExecution Time: " + executionTime + " ms");
+            MessageBox.Show("Midpoint Filter (Non-Efficient) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -134,15 +148,17 @@ namespace ImageFilters
                 return;
             }
 
+            int windowSize = GetSelectedWindowSize();
+
             int startTime = System.Environment.TickCount;
 
-            byte[,] filteredImage = ImageOperations.ApplyMidpointEfficient(ImageMatrix);
+            byte[,] filteredImage = ImageOperations.ApplyMidpointEfficient(ImageMatrix, windowSize);
 
             int executionTime = System.Environment.TickCount - startTime;
 
             ImageOperations.DisplayImage(filteredImage, pictureBox2);
 
-            MessageBox.Show("Midpoint Filter (Efficient) Applied!\nExecution Time: " + executionTime + " ms");
+            MessageBox.Show("Midpoint Filter (Efficient) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
         }
 
         private void button6_Click(object sender, EventArgs e)
