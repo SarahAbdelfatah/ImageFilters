@@ -183,35 +183,37 @@ namespace ImageFilters
 
         // ===== Midpoint Filter (Non-Efficient) =====
         // Collects neighbors into an array, then finds max & min with separate loops
-        public static byte[,] ApplyMidpointNonEfficient(byte[,] ImageMatrix)
+        public static byte[,] ApplyMidpointNonEfficient(byte[,] ImageMatrix, int windowSize)
         {
             int height = GetHeight(ImageMatrix);
             int width = GetWidth(ImageMatrix);
             byte[,] newimage = new byte[height, width];
+            int edge = windowSize / 2;
+            int totalNeighbors = windowSize * windowSize;
 
-            for (int i = 1; i < height - 1; i++)
+            for (int i = edge; i < height - edge; i++)
             {
-                for (int j = 1; j < width - 1; j++)
+                for (int j = edge; j < width - edge; j++)
                 {
-                    byte[] neighbor = new byte[9];
+                    byte[] neighbor = new byte[totalNeighbors];
                     int size = 0;
-                    for (int k = -1; k <= 1; k++)
+                    for (int k = -edge; k <= edge; k++)
                     {
-                        for (int l = -1; l <= 1; l++)
+                        for (int l = -edge; l <= edge; l++)
                         {
                             neighbor[size++] = ImageMatrix[i + k, j + l];
                         }
                     }
 
                     int max = neighbor[0];
-                    for (int x = 0; x < 9; x++)
+                    for (int x = 0; x < totalNeighbors; x++)
                     {
                         if (max < neighbor[x])
                             max = neighbor[x];
                     }
 
                     int min = neighbor[0];
-                    for (int x = 0; x < 9; x++)
+                    for (int x = 0; x < totalNeighbors; x++)
                     {
                         if (min > neighbor[x])
                             min = neighbor[x];
@@ -225,21 +227,22 @@ namespace ImageFilters
 
         // ===== Midpoint Filter (Efficient) =====
         // Tracks max & min on the fly in a single pass — no extra array needed
-        public static byte[,] ApplyMidpointEfficient(byte[,] ImageMatrix)
+        public static byte[,] ApplyMidpointEfficient(byte[,] ImageMatrix, int windowSize)
         {
             int height = GetHeight(ImageMatrix);
             int width = GetWidth(ImageMatrix);
             byte[,] newimage = new byte[height, width];
+            int edge = windowSize / 2;
 
-            for (int i = 1; i < height - 1; i++)
+            for (int i = edge; i < height - edge; i++)
             {
-                for (int j = 1; j < width - 1; j++)
+                for (int j = edge; j < width - edge; j++)
                 {
                     int max = 0;
                     int min = 255;
-                    for (int k = -1; k <= 1; k++)
+                    for (int k = -edge; k <= edge; k++)
                     {
-                        for (int l = -1; l <= 1; l++)
+                        for (int l = -edge; l <= edge; l++)
                         {
                             int current = ImageMatrix[i + k, j + l];
                             if (current > max)
