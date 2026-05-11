@@ -226,7 +226,7 @@ namespace ImageFilters
         }
 
         // ===== Midpoint Filter (Efficient) =====
-        // Tracks max & min on the fly in a single pass — no extra array needed
+        // Tracks max & min on the fly in a single pass â€” no extra array needed
         public static byte[,] ApplyMidpointEfficient(byte[,] ImageMatrix, int windowSize)
         {
             int height = GetHeight(ImageMatrix);
@@ -255,6 +255,119 @@ namespace ImageFilters
                 }
             }
             return newimage;
+        }
+
+        public static byte[,] MedianQuickSortFilter(byte[,] ImageMatrix, int windowSize)
+        {
+            int width = GetWidth(ImageMatrix);
+            int height = GetHeight(ImageMatrix);
+
+            byte[,] resultImage = new byte[height, width];
+
+            int edge = windowSize / 2;
+            int windowLength = windowSize * windowSize;
+
+            for (int y = 0; y < height; y++)
+            {
+                for (int x = 0; x < width; x++)
+                {
+                    byte[] window = new byte[windowLength];
+
+                    int count = 0;
+
+                    // Collect window elements
+                    for (int wy = -edge; wy <= edge; wy++)
+                    {
+                        for (int wx = -edge; wx <= edge; wx++)
+                        {
+                            int neighborY = y + wy;
+                            int neighborX = x + wx;
+
+                            // Boundary check
+                            if (neighborY < 0)
+                                neighborY = 0;
+
+                            if (neighborY >= height)
+                                neighborY = height - 1;
+
+                            if (neighborX < 0)
+                                neighborX = 0;
+
+                            if (neighborX >= width)
+                                neighborX = width - 1;
+
+                            window[count++] = ImageMatrix[neighborY, neighborX];
+                        }
+                    }
+
+                    // Sort the window using Quick Sort
+                    QuickSort(window, 0, window.Length - 1);
+
+                    // Get the median
+                    resultImage[y, x] = window[windowLength / 2];
+                }
+            }
+
+            return resultImage;
+        }
+
+        public static void QuickSort(byte[] arr, int left, int right)
+        {
+            int i = left;
+            int j = right;
+
+
+            byte pivot = arr[(left + right) / 2];
+
+            while (i <= j)
+            {
+
+                while (arr[i] < pivot)
+                    i++;
+
+                while (arr[j] > pivot)
+                    j--;
+
+                if (i <= j)
+                {
+                    byte temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+
+                    i++;
+                    j--;
+                }
+            }
+
+            if (left < j)
+                QuickSort(arr, left, j);
+            if (i < right)
+                QuickSort(arr, i, right);
+        }
+
+        int Partition(int[] arr, int low, int high)
+        {
+            int pivot = arr[high];
+            int i = low - 1;
+
+            for (int j = low; j < high; j++)
+            {
+                if (arr[j] < pivot)
+                {
+                    i++;
+                    // swap
+                    int temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+
+            // swap pivot
+            int temp2 = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = temp2;
+
+            return i + 1;
         }
 
 
