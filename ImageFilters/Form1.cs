@@ -74,7 +74,7 @@ namespace ImageFilters
             {
                 groupBox3.Visible = false;
                 groupBox2.Visible = true;
-                groupBox3.BringToFront();
+                groupBox2.BringToFront();
             }
 
         }
@@ -170,6 +170,46 @@ namespace ImageFilters
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            if (ImageMatrix == null)
+            {
+                MessageBox.Show("Please open an image first!");
+                return;
+            }
+
+            int windowSize = GetSelectedWindowSize();
+            int startTime = System.Environment.TickCount;
+
+            byte[,] filteredImage = ImageOperations.ApplyMedianFilter_SlidingWindow(ImageMatrix, windowSize);
+
+            int executionTime = System.Environment.TickCount - startTime;
+
+            ImageOperations.DisplayImage(filteredImage, pictureBox2);
+
+            MessageBox.Show("Median Filter (Sliding Window) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
+        }
+        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (ImageMatrix == null)
+            {
+                MessageBox.Show("Please open an image first!");
+                return;
+            }
+
+            int windowSize = GetSelectedWindowSize();
+            int startTime = System.Environment.TickCount;
+
+            byte[,] filteredImage = ImageOperations.MedianQuickSortFilter(ImageMatrix, windowSize);
+
+            int executionTime = System.Environment.TickCount - startTime;
+
+            ImageOperations.DisplayImage(filteredImage, pictureBox2);
+
+            MessageBox.Show("Median Filter (Quick Sort) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
         }
     }
 }

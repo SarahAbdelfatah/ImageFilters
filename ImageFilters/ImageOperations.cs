@@ -370,11 +370,11 @@ namespace ImageFilters
             return i + 1;
         }
 
-        public byte[,] ApplyMedianFilter_SlidingWindow(byte[,] ImageMatrix, int windowSize)
+        public static byte[,] ApplyMedianFilter_SlidingWindow(byte[,] ImageMatrix, int windowSize)
         {
             int height = ImageMatrix.GetLength(0);
             int width = ImageMatrix.GetLength(1);
-            byte[,] newImage = new byte[height, width];
+            byte[,] newImage = (byte[,])ImageMatrix.Clone();
 
             int offset = windowSize / 2;
             int medianIndex = (windowSize * windowSize) / 2;
@@ -414,7 +414,7 @@ namespace ImageFilters
             return newImage;
         }
         // Fast helper function to extract the median from a ready histogram
-        private byte GetMedianFromHistogram(int[] histogram, int medianIndex)
+        private static byte GetMedianFromHistogram(int[] histogram, int medianIndex)
         {
             int cumulativeCount = 0;
             for (int i = 0; i < 256; i++)
