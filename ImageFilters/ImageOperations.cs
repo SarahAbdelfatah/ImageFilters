@@ -370,6 +370,63 @@ namespace ImageFilters
             return i + 1;
         }
 
+        public byte[,] ApplyMedianFilter_SlidingWindow(byte[,] ImageMatrix, int windowSize)
+        {
+            int height = ImageMatrix.GetLength(0);
+            int width = ImageMatrix.GetLength(1);
+            byte[,] newImage = new byte[height, width];
+
+            int offset = windowSize / 2;
+            int medianIndex = (windowSize * windowSize) / 2;
+            // Iterate over each row in the image
+            for (int y = offset; y < height - offset; y++)
+            {
+                int[] histogram = new int[256];
+                // 1. Initialization: Compute the histogram for the first window in the row only
+                for (int wy = -offset; wy <= offset; wy++)
+                {
+                    for (int wx = -offset; wx <= offset; wx++)
+                    {
+                        histogram[ImageMatrix[y + wy, offset + wx]]++;
+                    }
+                }
+                // Find the median of the first pixel in the row
+                newImage[y, offset] = GetMedianFromHistogram(histogram, medianIndex);
+                // 2. Sliding: Iterate over the remaining pixels in the same row
+                for (int x = offset + 1; x < width - offset; x++)
+                {
+                    // a. Remove the old column (that left the window from the left)
+                    int leftColX = x - offset - 1;
+                    for (int wy = -offset; wy <= offset; wy++)
+                    {
+                        histogram[ImageMatrix[y + wy, leftColX]]--;
+                    }
+                    // b. Add the new column (that entered the window from the right)
+                    int rightColX = x + offset;
+                    for (int wy = -offset; wy <= offset; wy++)
+                    {
+                        histogram[ImageMatrix[y + wy, rightColX]]++;
+                    }
+                    // c. Find the median from the updated histogram directly
+                    newImage[y, x] = GetMedianFromHistogram(histogram, medianIndex);
+                }
+            }
+            return newImage;
+        }
+        // Fast helper function to extract the median from a ready histogram
+        private byte GetMedianFromHistogram(int[] histogram, int medianIndex)
+        {
+            int cumulativeCount = 0;
+            for (int i = 0; i < 256; i++)
+            {
+                cumulativeCount += histogram[i];
+                if (cumulativeCount > medianIndex)
+                {
+                    return (byte)i;
+                }
+            }
+            return 0;
+        }
 
     }
 }
