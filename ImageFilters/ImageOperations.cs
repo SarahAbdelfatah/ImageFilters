@@ -345,7 +345,7 @@ namespace ImageFilters
                 QuickSort(arr, i, right);
         }
 
-        int Partition(int[] arr, int low, int high)
+        public static int PartitionSort(int[] arr, int low, int high)
         {
             int pivot = arr[high];
             int i = low - 1;
@@ -427,6 +427,58 @@ namespace ImageFilters
             }
             return 0;
         }
+
+        public static byte FindMedian_CountingSort(byte[,] ImageMatrix, int row, int col, int WindowSize)
+        {
+            int Height = ImageMatrix.GetLength(0);
+            int Width  = ImageMatrix.GetLength(1);
+            int halfWS = WindowSize / 2;
+
+            int[] countArray = new int[256];
+            int totalPixels  = 0;
+
+            for (int wi = -halfWS; wi <= halfWS; wi++)
+            {
+                for (int wj = -halfWS; wj <= halfWS; wj++)
+                {
+                    int ni = row + wi;
+                    int nj = col + wj;
+
+                    if (ni >= 0 && ni < Height && nj >= 0 && nj < Width)
+                    {
+                        countArray[ImageMatrix[ni, nj]]++;
+                        totalPixels++;
+                    }
+                }
+            }
+
+            int medianIndex = totalPixels / 2;
+            int cumulative  = 0;
+
+            for (int v = 0; v < 256; v++)
+            {
+                cumulative += countArray[v];
+                if (cumulative > medianIndex)
+                    return (byte)v;
+            }
+
+            return 0;
+        }
+
+        public static byte[,] ApplyMedianFilter_CountingSort(byte[,] ImageMatrix, int WindowSize)
+        {
+            int Height = ImageMatrix.GetLength(0);
+            int Width  = ImageMatrix.GetLength(1);
+
+            byte[,] FilteredImage = new byte[Height, Width];
+
+            for (int i = 0; i < Height; i++)
+                for (int j = 0; j < Width; j++)
+                    FilteredImage[i, j] = FindMedian_CountingSort(ImageMatrix, i, j, WindowSize);
+
+            return FilteredImage;
+        }
+
 
     }
 }

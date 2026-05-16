@@ -42,6 +42,7 @@ namespace ImageFilters
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -107,10 +108,10 @@ namespace ImageFilters
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(23, 31);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(100, 20);
+            this.radioButton1.Size = new System.Drawing.Size(105, 20);
             this.radioButton1.TabIndex = 5;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Median filter";
+            this.radioButton1.Text = "Median Filter";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -162,7 +163,7 @@ namespace ImageFilters
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(130, 33);
             this.button4.TabIndex = 10;
-            this.button4.Text = "Efficient Way";
+            this.button4.Text = "Non Efficient Way";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -172,7 +173,7 @@ namespace ImageFilters
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(130, 33);
             this.button5.TabIndex = 11;
-            this.button5.Text = "Non Efficient Way";
+            this.button5.Text = "Efficient Way";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -188,21 +189,34 @@ namespace ImageFilters
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton6);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Location = new System.Drawing.Point(663, 671);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Size = new System.Drawing.Size(200, 111);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Choose The Desired Filter";
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(23, 83);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(128, 20);
+            this.radioButton6.TabIndex = 7;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Heuristic Method";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(418, 788);
+            this.groupBox2.Location = new System.Drawing.Point(418, 799);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(455, 84);
             this.groupBox2.TabIndex = 14;
@@ -213,7 +227,7 @@ namespace ImageFilters
             // 
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Location = new System.Drawing.Point(418, 788);
+            this.groupBox3.Location = new System.Drawing.Point(418, 799);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(455, 87);
             this.groupBox3.TabIndex = 15;
@@ -227,7 +241,7 @@ namespace ImageFilters
             this.groupBox4.Controls.Add(this.radioButton3);
             this.groupBox4.Location = new System.Drawing.Point(445, 671);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(200, 100);
+            this.groupBox4.Size = new System.Drawing.Size(200, 111);
             this.groupBox4.TabIndex = 16;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Window Size";
@@ -235,7 +249,7 @@ namespace ImageFilters
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(29, 73);
+            this.radioButton5.Location = new System.Drawing.Point(23, 83);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(48, 20);
             this.radioButton5.TabIndex = 7;
@@ -246,7 +260,7 @@ namespace ImageFilters
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(29, 47);
+            this.radioButton4.Location = new System.Drawing.Point(23, 57);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(48, 20);
             this.radioButton4.TabIndex = 7;
@@ -257,7 +271,7 @@ namespace ImageFilters
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(29, 21);
+            this.radioButton3.Location = new System.Drawing.Point(23, 31);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(48, 20);
             this.radioButton3.TabIndex = 7;
@@ -272,7 +286,6 @@ namespace ImageFilters
             this.ClientSize = new System.Drawing.Size(1299, 964);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox2);
@@ -280,6 +293,7 @@ namespace ImageFilters
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.button6);
+            this.Controls.Add(this.groupBox2);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Image Filters...";
@@ -318,6 +332,7 @@ namespace ImageFilters
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton6;
     }
 }
 

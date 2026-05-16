@@ -24,7 +24,10 @@ namespace ImageFilters
 
             radioButton1.Visible = false;
             radioButton2.Visible = false;
+            radioButton6.Visible = false;
 
+            // Default window size 3x3 checked
+            radioButton3.Checked = true;
         }
 
         byte[,] ImageMatrix;
@@ -59,6 +62,7 @@ namespace ImageFilters
                 groupBox4.Visible = true; // Show window size selection
                 radioButton1.Visible = true;
                 radioButton2.Visible = true;
+                radioButton6.Visible = true;
 
             }
         }
@@ -85,6 +89,35 @@ namespace ImageFilters
             {
                 groupBox2.Visible = false;
                 groupBox3.Visible = true;
+            }
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton6.Checked)
+            {
+                groupBox2.Visible = false;
+                groupBox3.Visible = false;
+
+                if (ImageMatrix == null)
+                {
+                    MessageBox.Show("Please open an image first!");
+                    return;
+                }
+
+                int windowSize = GetSelectedWindowSize();
+                int startTime = System.Environment.TickCount;
+
+                byte[,] filteredImage = ImageOperations.ApplyMedianFilter_SlidingWindow(ImageMatrix, windowSize);
+
+                int executionTime = System.Environment.TickCount - startTime;
+
+                ImageOperations.DisplayImage(filteredImage, pictureBox2);
+
+                MessageBox.Show("Heuristic Method Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
+                
+                // Uncheck the radio button to allow running it again
+                radioButton6.Checked = false;
             }
         }
 
@@ -183,13 +216,13 @@ namespace ImageFilters
             int windowSize = GetSelectedWindowSize();
             int startTime = System.Environment.TickCount;
 
-            byte[,] filteredImage = ImageOperations.ApplyMedianFilter_SlidingWindow(ImageMatrix, windowSize);
+            byte[,] filteredImage = ImageOperations.ApplyMedianFilter_CountingSort(ImageMatrix, windowSize);
 
             int executionTime = System.Environment.TickCount - startTime;
 
             ImageOperations.DisplayImage(filteredImage, pictureBox2);
 
-            MessageBox.Show("Median Filter (Sliding Window) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
+            MessageBox.Show("Median Filter (Counting Sort) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
         }
         
         private void button3_Click(object sender, EventArgs e)

@@ -42,3 +42,14 @@ C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\
 C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFil.606AFC6C.Up2Date
 C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.exe
 C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.pdb
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\bin\Debug\ImageFilters.exe.config
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\bin\Debug\ImageFilters.exe
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\bin\Debug\ImageFilters.pdb
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFilters.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFilters.Form1.resources
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFilters.Properties.Resources.resources
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFilters.csproj.GenerateResource.cache
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFilters.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFil.606AFC6C.Up2Date
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFilters.exe
+C:\Users\User\Desktop\final _ImageFilters\Image-Filters\ImageFilters\obj\Debug\ImageFilters.pdb
