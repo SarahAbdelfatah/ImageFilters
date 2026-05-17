@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +21,6 @@ namespace ImageFilters
             InitializeComponent();
         }
         public void DrawAllGraphs(double[] window_sizes, double[] q_y, double[] k_y, double[] c_y, double[] h_y, double[] MidpointEfficient_y, double[] NonEfficientMidPoint_y)
-        public void DrawAllGraphs(double[] window_sizes, double[] q_y, double[] k_y, double[] MidpointEfficient_y, double[] NonEfficientMidPoint_y)
         {
          
             medianManager = new ImageFilters.ZedGraph(zedGraphControl1, "Median Filter Comparison", "Window Size", "Time (ms)");

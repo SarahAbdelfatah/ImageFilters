@@ -253,63 +253,7 @@ namespace ImageFilters
 
 
 
-        private void analyze_Click(object sender, EventArgs e)
-        {
-            if (ImageMatrix == null)
-            {
-                MessageBox.Show("Please open an image first!");
-                return;
-            }
-            double[] window_sizes = { 3, 5, 7 };
-            //to store time to put on y-axis
-            double[] quick_y = new double[3];
-            double[] counting_y = new double[3];
-            double[] kth_y = new double[3];
-            double[] MidpointEfficient_y= new double[3];
-            double[] NonEfficientMidPoint_y = new double[3];
 
-            // calculate time taken for each filter at each window 
-            Stopwatch sw = new Stopwatch();
-            for(int i = 0; i < window_sizes.Length; i++)
-            {
-                int currentSize = (int)window_sizes[i];
-                //time of quick
-                sw.Restart();
-                ImageFilters.ImageOperations.MedianQuickSortFilter(ImageMatrix,currentSize);
-                sw.Stop();
-                quick_y[i] = sw.ElapsedMilliseconds;
-
-                //time of counting
-                // sw.Restart();
-                //ImageFilters.ImageOperations.MedianCountingFilter(ImageMatrix, currentSize);
-                //sw.Stop();
-                //counting_y[i] = sw.ElapsedMilliseconds;
-
-                //time of kth
-                sw.Restart();
-                ImageFilters.ImageOperations.KthFilter(ImageMatrix,currentSize);
-                sw.Stop();
-                kth_y[i] = sw.ElapsedMilliseconds;
-
-                //time of Midpoint Efficient
-                sw.Restart();
-                ImageFilters.ImageOperations.ApplyMidpointEfficient(ImageMatrix, currentSize);
-                sw.Stop();
-                MidpointEfficient_y[i] = sw.ElapsedMilliseconds;
-
-                //time of Midpoint Efficient
-                sw.Restart();
-                ImageFilters.ImageOperations.ApplyMidpointNonEfficient(ImageMatrix, currentSize);
-                sw.Stop();
-                NonEfficientMidPoint_y[i] = sw.ElapsedMilliseconds;
-            }
-
-            Form2 graphForm = new Form2();
-            graphForm.DrawAllGraphs(window_sizes, quick_y, kth_y, MidpointEfficient_y, NonEfficientMidPoint_y);
-            graphForm.Show();
-        }
-    }
-}
 
 
 

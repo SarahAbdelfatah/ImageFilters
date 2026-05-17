@@ -50,7 +50,6 @@ namespace ImageFilters
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.analyze = new System.Windows.Forms.Button();
-            this.analyze = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -310,16 +309,6 @@ namespace ImageFilters
             this.analyze.UseVisualStyleBackColor = true;
             this.analyze.Click += new System.EventHandler(this.analyze_Click);
             // 
-            // analyze
-            // 
-            this.analyze.Location = new System.Drawing.Point(951, 722);
-            this.analyze.Name = "analyze";
-            this.analyze.Size = new System.Drawing.Size(149, 66);
-            this.analyze.TabIndex = 17;
-            this.analyze.Text = "Analyze";
-            this.analyze.UseVisualStyleBackColor = true;
-            this.analyze.Click += new System.EventHandler(this.analyze_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -375,7 +364,6 @@ namespace ImageFilters
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.Button analyze;
         private System.Windows.Forms.Button analyze;
     }
 }
