@@ -61,7 +61,7 @@ namespace ImageFilters
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(607, 542);
             this.pictureBox1.TabIndex = 0;
@@ -70,7 +70,7 @@ namespace ImageFilters
             // pictureBox2
             // 
             this.pictureBox2.Location = new System.Drawing.Point(671, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(607, 542);
             this.pictureBox2.TabIndex = 1;
@@ -78,8 +78,8 @@ namespace ImageFilters
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(591, 588);
-            this.btnOpen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOpen.Location = new System.Drawing.Point(591, 565);
+            this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(109, 76);
             this.btnOpen.TabIndex = 2;
@@ -90,7 +90,7 @@ namespace ImageFilters
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(645, 630);
+            this.label1.Location = new System.Drawing.Point(645, 616);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 3;
@@ -98,7 +98,7 @@ namespace ImageFilters
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(645, 577);
+            this.label2.Location = new System.Drawing.Point(645, 566);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 4;
@@ -180,7 +180,7 @@ namespace ImageFilters
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(591, 588);
+            this.button6.Location = new System.Drawing.Point(591, 565);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(109, 76);
             this.button6.TabIndex = 12;
@@ -193,7 +193,7 @@ namespace ImageFilters
             this.groupBox1.Controls.Add(this.radioButton6);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Location = new System.Drawing.Point(661, 681);
+            this.groupBox1.Location = new System.Drawing.Point(661, 652);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 108);
             this.groupBox1.TabIndex = 13;
@@ -217,7 +217,7 @@ namespace ImageFilters
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(418, 820);
+            this.groupBox2.Location = new System.Drawing.Point(418, 774);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(455, 84);
             this.groupBox2.TabIndex = 14;
@@ -228,7 +228,7 @@ namespace ImageFilters
             // 
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Controls.Add(this.button5);
-            this.groupBox3.Location = new System.Drawing.Point(418, 820);
+            this.groupBox3.Location = new System.Drawing.Point(418, 774);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(455, 87);
             this.groupBox3.TabIndex = 15;
@@ -240,7 +240,7 @@ namespace ImageFilters
             this.groupBox4.Controls.Add(this.radioButton5);
             this.groupBox4.Controls.Add(this.radioButton4);
             this.groupBox4.Controls.Add(this.radioButton3);
-            this.groupBox4.Location = new System.Drawing.Point(429, 681);
+            this.groupBox4.Location = new System.Drawing.Point(429, 652);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(200, 108);
             this.groupBox4.TabIndex = 16;
@@ -282,9 +282,9 @@ namespace ImageFilters
             // 
             // analyze
             // 
-            this.analyze.Location = new System.Drawing.Point(566, 946);
+            this.analyze.Location = new System.Drawing.Point(591, 879);
             this.analyze.Name = "analyze";
-            this.analyze.Size = new System.Drawing.Size(132, 56);
+            this.analyze.Size = new System.Drawing.Size(109, 76);
             this.analyze.TabIndex = 17;
             this.analyze.Text = "Analyze";
             this.analyze.UseVisualStyleBackColor = true;
@@ -306,7 +306,7 @@ namespace ImageFilters
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.button6);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Image Filters...";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
