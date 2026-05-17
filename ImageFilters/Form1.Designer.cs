@@ -48,6 +48,8 @@ namespace ImageFilters
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.analyze = new System.Windows.Forms.Button();
             this.analyze = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -197,6 +199,7 @@ namespace ImageFilters
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.radioButton6);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Location = new System.Drawing.Point(572, 809);
@@ -285,6 +288,28 @@ namespace ImageFilters
             this.radioButton3.Text = "3x3";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(26, 99);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(128, 20);
+            this.radioButton6.TabIndex = 8;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Heuristic Method";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
+            // analyze
+            // 
+            this.analyze.Location = new System.Drawing.Point(951, 722);
+            this.analyze.Name = "analyze";
+            this.analyze.Size = new System.Drawing.Size(149, 66);
+            this.analyze.TabIndex = 17;
+            this.analyze.Text = "Analyze";
+            this.analyze.UseVisualStyleBackColor = true;
+            this.analyze.Click += new System.EventHandler(this.analyze_Click);
+            // 
             // analyze
             // 
             this.analyze.Location = new System.Drawing.Point(951, 722);
@@ -349,6 +374,8 @@ namespace ImageFilters
         private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.Button analyze;
         private System.Windows.Forms.Button analyze;
     }
 }

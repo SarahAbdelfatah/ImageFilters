@@ -25,7 +25,10 @@ namespace ImageFilters
 
             radioButton1.Visible = false;
             radioButton2.Visible = false;
+            radioButton6.Visible = false;
 
+            // Default window size 3x3 checked
+            radioButton3.Checked = true;
         }
 
         byte[,] ImageMatrix;
@@ -61,6 +64,7 @@ namespace ImageFilters
                 groupBox4.Visible = true; // Show window size selection
                 radioButton1.Visible = true;
                 radioButton2.Visible = true;
+                radioButton6.Visible = true;
 
             }
         }
@@ -87,6 +91,35 @@ namespace ImageFilters
             {
                 groupBox2.Visible = false;
                 groupBox3.Visible = true;
+            }
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton6.Checked)
+            {
+                groupBox2.Visible = false;
+                groupBox3.Visible = false;
+
+                if (ImageMatrix == null)
+                {
+                    MessageBox.Show("Please open an image first!");
+                    return;
+                }
+
+                int windowSize = GetSelectedWindowSize();
+                int startTime = System.Environment.TickCount;
+
+                byte[,] filteredImage = ImageOperations.ApplyMedianFilter_SlidingWindow(ImageMatrix, windowSize);
+
+                int executionTime = System.Environment.TickCount - startTime;
+
+                ImageOperations.DisplayImage(filteredImage, pictureBox2);
+
+                MessageBox.Show("Heuristic Method Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
+                
+                // Uncheck the radio button to allow running it again
+                radioButton6.Checked = false;
             }
         }
 
@@ -185,13 +218,13 @@ namespace ImageFilters
             int windowSize = GetSelectedWindowSize();
             int startTime = System.Environment.TickCount;
 
-            byte[,] filteredImage = ImageOperations.ApplyMedianFilter_SlidingWindow(ImageMatrix, windowSize);
+            byte[,] filteredImage = ImageOperations.ApplyMedianFilter_CountingSort(ImageMatrix, windowSize);
 
             int executionTime = System.Environment.TickCount - startTime;
 
             ImageOperations.DisplayImage(filteredImage, pictureBox2);
 
-            MessageBox.Show("Median Filter (Sliding Window) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
+            MessageBox.Show("Median Filter (Counting Sort) Applied!\nWindow Size: " + windowSize + "x" + windowSize + "\nExecution Time: " + executionTime + " ms");
         }
         
         private void button3_Click(object sender, EventArgs e)
@@ -273,6 +306,86 @@ namespace ImageFilters
 
             Form2 graphForm = new Form2();
             graphForm.DrawAllGraphs(window_sizes, quick_y, kth_y, MidpointEfficient_y, NonEfficientMidPoint_y);
+            graphForm.Show();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+        private void analyze_Click(object sender, EventArgs e)
+        {
+            if (ImageMatrix == null)
+            {
+                MessageBox.Show("Please open an image first!");
+                return;
+            }
+            double[] window_sizes = { 3, 5, 7 };
+            //to store time to put on y-axis
+            double[] quick_y = new double[3];
+            double[] counting_y = new double[3];
+            double[] kth_y = new double[3];
+            double[] heuristic_y = new double[3];
+            double[] MidpointEfficient_y= new double[3];
+            double[] NonEfficientMidPoint_y = new double[3];
+
+            // calculate time taken for each filter at each window 
+            Stopwatch sw = new Stopwatch();
+            for(int i = 0; i < window_sizes.Length; i++)
+            {
+                int currentSize = (int)window_sizes[i];
+                //time of quick
+                sw.Reset();
+                sw.Start();
+                ImageFilters.ImageOperations.MedianQuickSortFilter(ImageMatrix,currentSize);
+                sw.Stop();
+                quick_y[i] = sw.ElapsedMilliseconds;
+
+                //time of counting
+                sw.Reset();
+                sw.Start();
+                ImageFilters.ImageOperations.ApplyMedianFilter_CountingSort(ImageMatrix, currentSize);
+                sw.Stop();
+                counting_y[i] = sw.ElapsedMilliseconds;
+
+                //time of heuristic (sliding window)
+                sw.Reset();
+                sw.Start();
+                ImageFilters.ImageOperations.ApplyMedianFilter_SlidingWindow(ImageMatrix, currentSize);
+                sw.Stop();
+                heuristic_y[i] = sw.ElapsedMilliseconds;
+
+                //time of kth
+                sw.Reset();
+                sw.Start();
+                ImageFilters.ImageOperations.KthFilter(ImageMatrix,currentSize);
+                sw.Stop();
+                kth_y[i] = sw.ElapsedMilliseconds;
+
+                //time of Midpoint Efficient
+                sw.Reset();
+                sw.Start();
+                ImageFilters.ImageOperations.ApplyMidpointEfficient(ImageMatrix, currentSize);
+                sw.Stop();
+                MidpointEfficient_y[i] = sw.ElapsedMilliseconds;
+
+                //time of Midpoint Efficient
+                sw.Reset();
+                sw.Start();
+                ImageFilters.ImageOperations.ApplyMidpointNonEfficient(ImageMatrix, currentSize);
+                sw.Stop();
+                NonEfficientMidPoint_y[i] = sw.ElapsedMilliseconds;
+            }
+
+            Form2 graphForm = new Form2();
+            graphForm.DrawAllGraphs(window_sizes, quick_y, kth_y, counting_y, heuristic_y, MidpointEfficient_y, NonEfficientMidPoint_y);
             graphForm.Show();
         }
     }
