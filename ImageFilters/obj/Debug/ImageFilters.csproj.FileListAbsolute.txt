@@ -1,0 +1,56 @@
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\AdaptiveMedianFilter\bin\Debug\ImageFilters.exe.config
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe.config
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.pdb
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Form1.resources
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Properties.Resources.resources
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ResGen.read.1.tlog
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ResGen.write.1.tlog
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.exe
+C:\Users\Ahmed\Desktop\Algorithms 2010\PROJECTs\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.pdb
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe.config
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.pdb
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.AssemblyReference.cache
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Form1.resources
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Properties.Resources.resources
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.GenerateResource.cache
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.CoreCompileInputs.cache
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFil.606AFC6C.Up2Date
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.exe
+D:\2025\2nd term\FCIS\Algo\Project\[ALG] ImageFilters Project\Image Filters\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.pdb
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Form1.resources
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Properties.Resources.resources
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.GenerateResource.cache
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.exe
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.pdb
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe.config
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.pdb
+C:\Users\User\Desktop\projects\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFil.606AFC6C.Up2Date
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe.config
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.exe
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\bin\Debug\ImageFilters.pdb
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Form1.resources
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.Properties.Resources.resources
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.GenerateResource.cache
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFil.606AFC6C.Up2Date
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.exe
+C:\Users\User\Desktop\projects\privateRepo\[TEMPLATE] ImageFilters\ImageFilters\obj\Debug\ImageFilters.pdb
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\bin\Debug\ImageFilters.exe.config
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\bin\Debug\ImageFilters.exe
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\bin\Debug\ImageFilters.pdb
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.csproj.AssemblyReference.cache
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.Form1.resources
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.Properties.Resources.resources
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.csproj.GenerateResource.cache
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.csproj.CoreCompileInputs.cache
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFil.606AFC6C.Up2Date
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.exe
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.pdb
+C:\Users\jousa\OneDrive\Documents\algo\ImageFilters\obj\Debug\ImageFilters.Form2.resources
